@@ -1,0 +1,4 @@
+target/
+.settings/
+context.maria.properties
+mybatis-generator.xml

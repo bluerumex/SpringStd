@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="spring.std.dao.mapper.HomeMapper">
+    <resultMap id="BaseResultMap" type="spring.std.vo.Stadium">
+        <id column="STADIUM_ID" property="stadiumId" jdbcType="CHAR" />
+        <result column="REG_DTM" property="regDtm" jdbcType="DATE" />
+        <result column="UPDATE_DTM" property="updateDtm" jdbcType="DATE" />
+        <result column="STATUS_CD" property="statusCd" jdbcType="CHAR" />
+        <result column="STADIUM_NAME" property="stadiumName" jdbcType="VARCHAR" />
+        <result column="HOMETEAM_ID" property="hometeamId" jdbcType="CHAR" />
+        <result column="SEAT_COUNT" property="seatCount" jdbcType="BIGINT" />
+        <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+        <result column="DDD" property="ddd" jdbcType="VARCHAR" />
+        <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="home" resultMap="BaseResultMap">
+        SELECT stadium_id,
+               reg_dtm,
+               update_dtm,
+               status_cd,
+               stadium_name,
+               hometeam_id,
+               seat_count,
+               address,
+               ddd,
+               tel
+          FROM tb_stadium
+    </select>
+</mapper>
